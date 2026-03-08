@@ -32,7 +32,7 @@ const Navbar = () => {
           </NavItem>
 
           <NavLink
-            to="/login"
+            to="/"
             className="flex items-center gap-2 bg-white text-green-700 px-4 py-1.5 rounded-full hover:bg-green-100 transition"
           >
             <User size={16} /> Student
