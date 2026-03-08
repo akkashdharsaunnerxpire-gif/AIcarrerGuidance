@@ -11,7 +11,7 @@ export const AdminProvider = ({ children }) => {
     try {
       setLoading(true);
       const res = await axios.get(
-        `${process.env.BACKEND_URL}/admin/students`
+        `${process.env.VITE_BACKEND_URL}/admin/students`
       );
       setStudents(res.data);
     } catch (err) {
