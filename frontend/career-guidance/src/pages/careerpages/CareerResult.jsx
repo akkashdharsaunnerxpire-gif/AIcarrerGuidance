@@ -52,7 +52,7 @@ const CareerResult = () => {
     try {
       setSubmitting(true);
 
-      await axios.post("http://127.0.0.1:8000/review/add", {
+      await axios.post("${process.env.VITE_BACKEND_URL}/review/add", {
         user_uuid: user.uuid,
         rating,
         review: comment,
