@@ -1,5 +1,5 @@
 fastapi
-uvicorn
+uvicorn[standard]
 python-dotenv
 pydantic
 numpy
@@ -9,5 +9,5 @@ joblib
 requests
 firebase-admin
 python-multipart
-passlib
+passlib[bcrypt]
 python-jose
