@@ -63,7 +63,7 @@ const Navbar = () => {
             <MobileItem to="/admin" onClick={() => setOpen(false)}>
               Admin
             </MobileItem>
-            <MobileItem to="/login" onClick={() => setOpen(false)}>
+            <MobileItem to="/" onClick={() => setOpen(false)}>
               Student Login
             </MobileItem>
           </motion.div>

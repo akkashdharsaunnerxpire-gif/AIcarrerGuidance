@@ -23,6 +23,7 @@ const OTHER_SKILLS = [
   { key: "management", label: "Management Skill" },
 ];
 
+const API = import.meta.env.VITE_BACKEND_URL;
 const CareerForm = () => {
   const navigate = useNavigate();
 
@@ -53,11 +54,17 @@ const CareerForm = () => {
     try {
       setLoading(true);
 
+<<<<<<< HEAD
       const res = await axios.post(
         "${process.env.VITE_BACKEND_URL}/career/predict",
         formData,
         { params: { user_uuid: user.uuid } }
       );
+=======
+      const res = await axios.post(`${API}/career/predict`, formData, {
+        params: { user_uuid: user.uuid },
+      });
+>>>>>>> 9067676 (fix env variables and routes)
 
       setTimeout(() => {
         localStorage.setItem("careerResult", JSON.stringify(res.data));

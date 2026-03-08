@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Home, Star, X, Smile } from "lucide-react";
 import Stepper from "../../components/Stepper";
+const API = import.meta.env.VITE_BACKEND_URL;
 
 const CareerResult = () => {
   const navigate = useNavigate();
@@ -52,7 +53,11 @@ const CareerResult = () => {
     try {
       setSubmitting(true);
 
+<<<<<<< HEAD
       await axios.post("${process.env.VITE_BACKEND_URL}/review/add", {
+=======
+      await axios.post(`${API}/review/add`, {
+>>>>>>> 9067676 (fix env variables and routes)
         user_uuid: user.uuid,
         rating,
         review: comment,
@@ -103,7 +108,7 @@ const CareerResult = () => {
                   </h3>
                   <p>Score: {result[k].score}</p>
                 </div>
-              )
+              ),
           )}
 
           <button

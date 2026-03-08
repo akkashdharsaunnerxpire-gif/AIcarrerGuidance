@@ -29,8 +29,7 @@ const App = () => {
         <Route element={<Studentlayout />}>
 
           <Route path="/" element={<Login />} />
-z
-          <Route path="/register" element={<Register />} />
+<Route path="/register" element={<Register />} />
           <Route path="/admin" element={<AdminAuth />} />
 
         </Route>

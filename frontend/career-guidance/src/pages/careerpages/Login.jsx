@@ -11,7 +11,8 @@ import {
   EyeOff,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import sideImg from "../../assets/studentImage (2).png"
+import sideImg from "../../assets/studentImage (2).png";
+const API = import.meta.env.VITE_BACKEND_URL;
 
 const Login = () => {
   const navigate = useNavigate();
@@ -30,9 +31,13 @@ const Login = () => {
 
     try {
       const res = await axios.post(
+<<<<<<< HEAD
         `${process.env.VITE_BACKEND_URL}/auth/login`,
+=======
+        `${API}/auth/login`,
+>>>>>>> 9067676 (fix env variables and routes)
         { email, password },
-        { headers: { "Content-Type": "application/json" } }
+        { headers: { "Content-Type": "application/json" } },
       );
 
       localStorage.setItem("token", res.data.access_token);
@@ -54,7 +59,6 @@ const Login = () => {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 min-h-screen">
-
       {/* LEFT – IMAGE */}
       <motion.div
         initial={{ opacity: 0, x: -60 }}
@@ -110,7 +114,10 @@ const Login = () => {
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Email */}
             <motion.div whileFocus={{ scale: 1.03 }} className="relative">
-              <Mail className="absolute left-3 top-3.5 text-gray-400" size={18} />
+              <Mail
+                className="absolute left-3 top-3.5 text-gray-400"
+                size={18}
+              />
               <input
                 type="email"
                 placeholder="Email Address"
@@ -123,7 +130,10 @@ const Login = () => {
 
             {/* Password */}
             <motion.div whileFocus={{ scale: 1.03 }} className="relative">
-              <Lock className="absolute left-3 top-3.5 text-gray-400" size={18} />
+              <Lock
+                className="absolute left-3 top-3.5 text-gray-400"
+                size={18}
+              />
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="Password"

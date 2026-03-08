@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AlertCircle, Eye, EyeOff } from "lucide-react";
 import sideImg from "../../assets/studentImage (2).png";
+const API = import.meta.env.VITE_BACKEND_URL;
 
 const Register = () => {
   const navigate = useNavigate();
@@ -52,7 +53,11 @@ const Register = () => {
     setLoading(true);
 
     try {
+<<<<<<< HEAD
       await axios.post(`${process.env.VITE_BACKEND_URL}/auth/register`, {
+=======
+      await axios.post(`${API}/auth/register`, {
+>>>>>>> 9067676 (fix env variables and routes)
         name: formData.name,
         email: formData.email,
         password: formData.password,
@@ -73,7 +78,6 @@ const Register = () => {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 min-h-screen">
-
       {/* LEFT – IMAGE */}
       <div className="hidden md:block">
         <img
@@ -86,7 +90,6 @@ const Register = () => {
       {/* RIGHT – REGISTER FORM */}
       <div className="flex flex-auto items-center justify-center bg-gradient-to-br from-indigo-100 to-purple-200 px-6">
         <div className="bg-white w-full max-w-2xl rounded-2xl shadow-xl p-8">
-
           {/* Header */}
           <div className="mb-6 text-center">
             <h2 className="text-3xl font-bold text-gray-800">
@@ -110,8 +113,18 @@ const Register = () => {
             onSubmit={handleSubmit}
             className="grid grid-cols-1 md:grid-cols-2 gap-4"
           >
-            <input name="name" placeholder="Full Name" onChange={handleChange} className="input" />
-            <input name="email" placeholder="Email Address" onChange={handleChange} className="input" />
+            <input
+              name="name"
+              placeholder="Full Name"
+              onChange={handleChange}
+              className="input"
+            />
+            <input
+              name="email"
+              placeholder="Email Address"
+              onChange={handleChange}
+              className="input"
+            />
 
             <select name="gender" onChange={handleChange} className="input">
               <option value="">Select Gender</option>
@@ -119,9 +132,24 @@ const Register = () => {
               <option>Female</option>
             </select>
 
-            <input name="degree" placeholder="Degree (B.E / B.Tech)" onChange={handleChange} className="input" />
-            <input name="department" placeholder="Department" onChange={handleChange} className="input" />
-            <input name="year" placeholder="Year (1 / 2 / 3 / 4)" onChange={handleChange} className="input" />
+            <input
+              name="degree"
+              placeholder="Degree (B.E / B.Tech)"
+              onChange={handleChange}
+              className="input"
+            />
+            <input
+              name="department"
+              placeholder="Department"
+              onChange={handleChange}
+              className="input"
+            />
+            <input
+              name="year"
+              placeholder="Year (1 / 2 / 3 / 4)"
+              onChange={handleChange}
+              className="input"
+            />
 
             <input
               name="skills"
@@ -184,7 +212,6 @@ const Register = () => {
               Login
             </button>
           </div>
-
         </div>
       </div>
     </div>
