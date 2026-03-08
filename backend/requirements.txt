@@ -13,3 +13,4 @@ passlib[bcrypt]
 python-jose
 SQLAlchemy
 psycopg2-binary
+email-validator
