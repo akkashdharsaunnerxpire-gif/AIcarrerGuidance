@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import sideImg from "../../assets/adminimage.png";
 
-const API_URL = "http://127.0.0.1:8000/admin";
+const API_URL = "${process.env.VITE_BACKEND_URL}/admin";
 
 const AdminAuth = () => {
   const navigate = useNavigate();
