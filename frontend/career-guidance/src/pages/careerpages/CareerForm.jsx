@@ -54,7 +54,7 @@ const CareerForm = () => {
       setLoading(true);
 
       const res = await axios.post(
-        "http://127.0.0.1:8000/career/predict",
+        "${process.env.VITE_BACKEND_URL}/career/predict",
         formData,
         { params: { user_uuid: user.uuid } }
       );
