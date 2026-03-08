@@ -30,7 +30,7 @@ const Login = () => {
 
     try {
       const res = await axios.post(
-        `${process.env.BACKEND_URL}/auth/login`,
+        `${process.env.VITE_BACKEND_URL}/auth/login`,
         { email, password },
         { headers: { "Content-Type": "application/json" } }
       );
